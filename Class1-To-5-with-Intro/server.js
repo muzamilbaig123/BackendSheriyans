@@ -1,11 +1,14 @@
-let http = require("http");
+const express = require("express");
 
-let server = http.createServer((req, res) => {
-    console.log("hey!!!")
-    res.end()
+
+const app = express();
+const port = 3000;
+
+app.get("/", (req, res) => {
+    res.send("Yes I Am Home Page")
 })
 
 
-server.listen(3000, () => {
-    console.log("server is running")
+app.listen(port, () => {
+    console.log("Server is Running Using ExpressJs!")
 })
