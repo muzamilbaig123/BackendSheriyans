@@ -26,4 +26,5 @@ req, res
 5- 
 express ku nahi pata text accpet karna hai ya josn. solution app.use(express.json())
 
-6- 
+6- Put and Patch Differnece:  update put me entire object update karta hai but patch me only value update karta hai 
+
