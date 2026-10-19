@@ -6,50 +6,49 @@ app.use(express.json());
 
 const port = 3001;
 
-// ============crud============
-
-// create
 let users = [];
 
+// Home page
+app.get("/", (req, res) => {
+  res.send("Yes I Am Home Page");
+});
+
+// Create
 app.post("/create", (req, res) => {
   let body = req.body;
 
   users.push(body);
 
-  res.send("User saved Successully!");
+  res.send("Users Created Successfully!");
 });
 
-// read
-app.get("/", (req, res) => {
+// Read
+app.get("/users", (req, res) => {
   res.send(users);
 });
 
-// delete
+// Update
+app.patch("/update/:id", (req, res) => {
+  let { id } = req.params;
+  let body = req.body;
+
+  users = users.map((val) =>
+    val.id === id ? { ...val, ...body } : val
+  );
+
+  res.send(users);
+});
+
+// Delete
 app.delete("/delete/:id", (req, res) => {
   let { id } = req.params;
 
-  let userData = users.filter((value) => value.id !== id);
+  users = users.filter((val) => val.id !== id);
 
-  users = userData;
-
-  res.send("User deleted successfully", users);
+  res.send("User deleted successfully!");
 });
 
-// update put me entire object update karta hai but patch me only value update karta hai
-
-// app.put("/update/:id", (req, res) => {
-app.patch("/update/:id", (req, res) => {
-  let { id } = req.params;
-
-  let body = req.body;
-
-  let updatedUser = users.map((val) =>
-    val.id === id ? { ...val, body } : val,
-  );
-
-  res.send(updatedUser);
-});
-
+// Server
 app.listen(port, () => {
   console.log("Server is Running Using ExpressJs!");
 });
