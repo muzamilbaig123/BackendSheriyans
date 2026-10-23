@@ -1,5 +1,5 @@
 const express = require("express");
-const router = require("../../NotesApplication/src/routes/note.routes");
+const notesRoute = require("../../NotesApplication/src/routes/note.routes");
 const connectDb = require("./config/db");
 
 const app = express();
@@ -10,8 +10,7 @@ connectDb()
 
 
 // routes
-app.use("/", router)
-app.use("/create", router)
+app.use("/notes", notesRoute)
 
 
 module.exports = app;
