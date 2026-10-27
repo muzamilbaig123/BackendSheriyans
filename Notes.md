@@ -28,3 +28,12 @@ express ku nahi pata text accpet karna hai ya josn. solution app.use(express.jso
 
 6- Put and Patch Differnece:  update put me entire object update karta hai but patch me only value update karta hai 
 
+
+7- FTP: 
+Multer use file transfer chunks me media jata hai storage mey. multer 2 type storage hotey hain. 
+1- diskstorage  =  Local disk per save image
+2- memory storage  =  server uploading use  
+
+8- Database only text and json ke liye hota hai
+
+9- FTP controller banya but form data pre post kiya but console me undefine araha hai. because middelwear use nahi kiya 
