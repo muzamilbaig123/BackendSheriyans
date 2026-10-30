@@ -1,10 +1,10 @@
 import multer from "multer";
 
 // memorystorage for server save
-const storage = multer.memoryStorage() 
+// const storage = multer.memoryStorage() 
 
 // disk storage for local save 
-/*
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, "uploads/")
@@ -14,6 +14,6 @@ const storage = multer.diskStorage({
 
     }
 })
-*/
+
 
 export const uploads = multer({ storage })
