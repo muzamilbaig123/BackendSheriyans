@@ -20,7 +20,7 @@ app.use(cors({
 
 // routes
 
-app.use("/users", router)
+app.use("/auth", router)
 
 
 module.exports = app;
