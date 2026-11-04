@@ -1,6 +1,7 @@
 const express = require("express");
 const connectDb = require("./config/db");
 const cors = require("cors");
+const router = require("./routes/register.routes");
 
 const app = express();
 
@@ -18,6 +19,8 @@ app.use(cors({
 
 
 // routes
+
+app.use("/users", router)
 
 
 module.exports = app;
