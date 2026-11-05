@@ -27,4 +27,14 @@ const registerController = async (req, res) => {
 }
 
 
-module.exports = registerController;
+const loginController = (req, res) => {
+
+    const token = req.headers.authorization;
+
+    const userData = jwt.decode(token);
+
+    console.log(userData)
+
+}
+
+module.exports = { registerController, loginController };
